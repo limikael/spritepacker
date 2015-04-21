@@ -5,7 +5,7 @@ describe("SpriterSourceImage", function() {
 		var s = new SpriterSourceImage(__dirname + "/data/table.png");
 
 		s.load().then(function() {
-			console.log("loaded, area: " + s.getArea() + " w:" + s.getWidth());
+			//console.log("loaded, area: " + s.getArea() + " w:" + s.getWidth());
 
 			expect(s.getHeight()).toBe(412);
 			expect(s.getWidth()).toBe(772);

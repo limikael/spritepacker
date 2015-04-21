@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "fs-extra": "^0.18.2",
     "grunt": "^0.4.5",
     "grunt-contrib-yuidoc": "0.5.2",
     "jasmine": "^2.2.1",
