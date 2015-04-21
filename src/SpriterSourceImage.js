@@ -61,4 +61,12 @@ SpriterSourceImage.prototype.getArea = function() {
 	return this.getWidth() * this.getHeight();
 }
 
+/**
+ * Get file name.
+ * @method getFileName
+ */
+SpriterSourceImage.prototype.getFileName = function() {
+	return this.fileName;
+}
+
 module.exports = SpriterSourceImage;

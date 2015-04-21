@@ -9,13 +9,13 @@ describe("SpriterDestImage", function() {
 	});
 
 	it("can create an image and save it", function(done) {
-		var s = new SpriterDestImage(__dirname + "/tmp/create_and_save.png");
+		var s = new SpriterDestImage(__dirname + "/tmp/create_and_save");
 
 		s.save().then(done);
 	});
 
 	it("catches errors", function(done) {
-		var s = new SpriterDestImage("/some/non/existing/path/image.png");
+		var s = new SpriterDestImage("/some/non/existing/path/image");
 
 		s.save().then(
 			function() {},
@@ -30,7 +30,7 @@ describe("SpriterDestImage", function() {
 		var source2 = new SpriterSourceImage(__dirname + "/data/wrenchIcon.png");
 
 		Thenable.all(source1.load(), source2.load()).then(function() {
-			var dest = new SpriterDestImage(__dirname + "/tmp/added_images.png", 512, 512);
+			var dest = new SpriterDestImage(__dirname + "/tmp/added_images", 512, 512);
 
 			dest.putImageAt(100, 0, source1);
 			dest.putImageAt(200, 200, source2);
