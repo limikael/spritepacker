@@ -1,5 +1,6 @@
 var SpriterDestImage = require("./SpriterDestImage");
 var Thenable = require("tinp");
+var SpriterDummyDestImage = require("./SpriterDummyDestImage");
 
 /**
  * Sprite packer.
@@ -10,6 +11,17 @@ function Spriter() {
 
 	this.spacing = 2;
 	this.destPrefix = "spritesheet_";
+
+	this.unpacked = [];
+	this.fixedSize = 0;
+}
+
+/**
+ * Set fixed size.
+ * @method setFixedSize
+ */
+Spriter.prototype.setFixedSize = function(size) {
+	this.fixedSize = size;
 }
 
 /**
@@ -86,20 +98,70 @@ Spriter.prototype.loadSourceImages = function() {
 }
 
 /**
+ * Put all images in the unpacked array.
+ * @method resetUnpacked
+ */
+Spriter.prototype.resetUnpacked = function() {
+	this.unpacked = [];
+
+	for (var i = 0; i < this.sourceImages.length; i++)
+		this.unpacked.push(this.sourceImages[i]);
+}
+
+/**
  * Pack all images.
  * @method packImages
  */
 Spriter.prototype.packImages = function() {
 	this.destImages = [];
-	this.unpacked = [];
 
-	for (var i = 0; i < this.sourceImages.length; i++)
-		this.unpacked.push(this.sourceImages[i]);
+	for (i = 0; i < this.sourceImages.length; i++)
+		if (this.fixedSize && !this.sourceImages[i].fitsIn(this.fixedSize, this.fixedSize))
+			throw new Error("Fixed size is too small.");
+
+	var size;
+
+	if (this.fixedSize)
+		size = this.fixedSize;
+
+	else
+		size = this.suggestSize();
+
+	this.resetUnpacked();
 
 	while (this.unpacked.length > 0) {
-		var destImage = new SpriterDestImage(this.destPrefix + this.destImages.length);
+		var fileNamePrefix;
+
+		if (this.fixedSize)
+			fileNamePrefix = this.destPrefix + this.destImages.length;
+
+		else
+			fileNamePrefix = this.destPrefix;
+
+		var destImage = new SpriterDestImage(fileNamePrefix, size, size);
 		this.packRegion(destImage, 0, 0, destImage.getWidth(), destImage.getHeight());
 		this.destImages.push(destImage);
+	}
+}
+
+/**
+ * Suggest size.
+ * @method suggestSize
+ */
+Spriter.prototype.suggestSize = function() {
+	var exp = 1;
+
+	while (1) {
+		this.resetUnpacked();
+
+		var size = Math.pow(2, exp);
+		var destImage = new SpriterDummyDestImage(size, size);
+		this.packRegion(destImage, 0, 0, destImage.getWidth(), destImage.getHeight());
+
+		if (!this.unpacked.length)
+			return size;
+
+		exp++;
 	}
 }
 
@@ -124,12 +186,17 @@ Spriter.prototype.save = function() {
  */
 Spriter.prototype.process = function() {
 	var thenable = new Thenable();
-
 	var scope = this;
 
 	scope.loadSourceImages().then(
 		function() {
-			scope.packImages();
+			try {
+				scope.packImages();
+			} catch (e) {
+				thenable.reject(e);
+				return;
+			}
+
 			scope.save().then(
 				function() {
 					thenable.resolve();
