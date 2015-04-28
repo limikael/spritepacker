@@ -33,8 +33,13 @@ These apply to both the command line tool and (eventually) to the grunt task:
 * `--out=<prefix>`
 
   Use this to specify the name and directory of the generated spritesheet, rather than the default
-  `spritesheet.json` and `spritesheet.png`.
+  `spritesheet.json` and `spritesheet.png` in the current directory.
 
-* --series=<size>
+* `--series=<size>`
 
+  By default, the size of the generated spritesheet will be adjusted automatically to accommodate for all 
+  input files. If you use the `--series` option, then a series of spritesheets is generated instead. E.g.,
+  if you specify `--series=512` then the generated images will be 512x512 pixels. They will be called
+  `spritesheet0.json`, `spritesheet0.png`, `spritesheet1.json`, `spritesheet1.png`, and so on, and there will
+  be as many images generated as required to accomodate for all input images. 
   
