@@ -1,6 +1,6 @@
-Spriter
-=======
-
+Spritepacker
+============
+sp
 Command line tool and grunt task to generate sprite sheets.
 
 Command line tool
@@ -9,13 +9,13 @@ Command line tool
 Install with:
 
 ```
-npm install -g spriter
+npm install -g spritepacker
 ```
 
 Run with:
 
 ```
-spriter my_file.png my_other_file.png
+spritepacker my_file.png my_other_file.png
 ```
 
 This will generate `spritesheet.json` and `spritesheet.png` in the current directory.
