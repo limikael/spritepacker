@@ -28,6 +28,9 @@ This is not created yet!
 Options
 -------
 
-These apply to both the command line tool and the grunt task:
+These apply to both the command line tool and (eventually) to the grunt task:
 
-* --out=prefix
+* `--out=<prefix>`
+
+  hello world...
+* --series=<size>
