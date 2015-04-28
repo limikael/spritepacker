@@ -42,4 +42,12 @@ These apply to both the command line tool and (eventually) to the grunt task:
   if you specify `--series=512` then the generated images will be 512x512 pixels. They will be called
   `spritesheet0.json`, `spritesheet0.png`, `spritesheet1.json`, `spritesheet1.png`, and so on, and there will
   be as many images generated as required to accomodate for all input images. 
-  
+
+TODO
+----
+
+There are things to do! Feel free to pitch in! :)
+
+* grunt task, as referenced above...
+* import spritesheet
+* ability to specify some sort of rules for mangling or prefixing the keys 
