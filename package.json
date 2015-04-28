@@ -16,7 +16,8 @@
     "yuidoc-die-on-warnings": "0.0.2"
   },
   "dependencies": {
-    "tinp": "0.0.1",
-    "pngjs-image": "^0.11.1"
+    "minimist": "^1.1.1",
+    "pngjs-image": "^0.11.1",
+    "tinp": "0.0.1"
   }
 }

@@ -127,9 +127,25 @@ describe("Spriter", function() {
 		s.process().then(
 			function() {},
 			function(e) {
-				console.log(e);
+				//console.log(e);
 				done();
 			}
 		);
+	});
+
+	it("strips off the extension from output file names.", function() {
+		var s = new Spriter();
+
+		s.setDestPrefix("hello.png");
+		expect(s.getDestPrefix()).toEqual("hello");
+
+		s.setDestPrefix("without_prefix");
+		expect(s.getDestPrefix()).toEqual("without_prefix");
+
+		s.setDestPrefix("hello.dot.png");
+		expect(s.getDestPrefix()).toEqual("hello.dot");
+
+		s.setDestPrefix("hello.JSON");
+		expect(s.getDestPrefix()).toEqual("hello");
 	});
 });

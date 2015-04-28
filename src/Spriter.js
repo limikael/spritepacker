@@ -1,6 +1,7 @@
 var SpriterDestImage = require("./SpriterDestImage");
 var Thenable = require("tinp");
 var SpriterDummyDestImage = require("./SpriterDummyDestImage");
+var path = require("path");
 
 /**
  * Sprite packer.
@@ -29,7 +30,20 @@ Spriter.prototype.setFixedSize = function(size) {
  * @method setDestPrefix
  */
 Spriter.prototype.setDestPrefix = function(destPrefix) {
+	var ext = path.extname(destPrefix).toUpperCase();
+
+	if (ext == ".PNG" || ext == ".JSON")
+		destPrefix = destPrefix.substr(0, destPrefix.lastIndexOf("."));
+
 	this.destPrefix = destPrefix;
+}
+
+/**
+ * Get dest prefix.
+ * @method getDestPrefix
+ */
+Spriter.prototype.getDestPrefix = function() {
+	return this.destPrefix;
 }
 
 /**
@@ -87,6 +101,7 @@ Spriter.prototype.packRegion = function(dest, x, y, w, h) {
 
 /**
  * Load all source images.
+ * @method loadSourceImages
  */
 Spriter.prototype.loadSourceImages = function() {
 	var thenables = [];
