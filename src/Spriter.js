@@ -11,7 +11,7 @@ function Spriter() {
 	this.sourceImages = [];
 
 	this.spacing = 2;
-	this.destPrefix = "spritesheet_";
+	this.destPrefix = "spritesheet";
 
 	this.unpacked = [];
 	this.fixedSize = 0;

@@ -28,7 +28,7 @@ SpriterSourceImage.prototype.load = function(fileName) {
 
 	this.image = PNGImage.readImage(this.fileName, function() {
 		if (!this.image._image.data)
-			thenable.reject("Unable to load image");
+			thenable.reject("Unable to load image: " + this.fileName);
 
 		else
 			thenable.resolve();
