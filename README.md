@@ -32,5 +32,9 @@ These apply to both the command line tool and (eventually) to the grunt task:
 
 * `--out=<prefix>`
 
-  hello world...
+  Use this to specify the name and directory of the generated spritesheet, rather than the default
+  `spritesheet.json` and `spritesheet.png`.
+
 * --series=<size>
+
+  
