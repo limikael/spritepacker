@@ -1,0 +1,247 @@
+{
+    "frames": {
+        "table.png": {
+            "frame": {
+                "x": 0,
+                "y": 0,
+                "w": 772,
+                "h": 412
+            }
+        },
+        "seatPlate.png": {
+            "frame": {
+                "x": 774,
+                "y": 0,
+                "w": 160,
+                "h": 70
+            }
+        },
+        "buttonBackground.png": {
+            "frame": {
+                "x": 936,
+                "y": 0,
+                "w": 64,
+                "h": 64
+            }
+        },
+        "wrenchIcon.png": {
+            "frame": {
+                "x": 1002,
+                "y": 0,
+                "w": 21,
+                "h": 21
+            }
+        },
+        "suitSymbol0.png": {
+            "frame": {
+                "x": 1002,
+                "y": 23,
+                "w": 18,
+                "h": 19
+            }
+        },
+        "suitSymbol1.png": {
+            "frame": {
+                "x": 1002,
+                "y": 44,
+                "w": 18,
+                "h": 19
+            }
+        },
+        "cardBack.png": {
+            "frame": {
+                "x": 774,
+                "y": 72,
+                "w": 87,
+                "h": 122
+            }
+        },
+        "cardFrame.png": {
+            "frame": {
+                "x": 863,
+                "y": 72,
+                "w": 87,
+                "h": 122
+            }
+        },
+        "dealerButton.png": {
+            "frame": {
+                "x": 952,
+                "y": 72,
+                "w": 41,
+                "h": 35
+            }
+        },
+        "sliderKnob.png": {
+            "frame": {
+                "x": 995,
+                "y": 72,
+                "w": 28,
+                "h": 28
+            }
+        },
+        "chip0.png": {
+            "frame": {
+                "x": 952,
+                "y": 109,
+                "w": 40,
+                "h": 30
+            }
+        },
+        "suitSymbol2.png": {
+            "frame": {
+                "x": 994,
+                "y": 109,
+                "w": 18,
+                "h": 19
+            }
+        },
+        "upArrow.png": {
+            "frame": {
+                "x": 994,
+                "y": 130,
+                "w": 12,
+                "h": 8
+            }
+        },
+        "chip1.png": {
+            "frame": {
+                "x": 952,
+                "y": 141,
+                "w": 40,
+                "h": 30
+            }
+        },
+        "suitSymbol3.png": {
+            "frame": {
+                "x": 994,
+                "y": 141,
+                "w": 18,
+                "h": 19
+            }
+        },
+        "textScrollbarThumb.png": {
+            "frame": {
+                "x": 952,
+                "y": 173,
+                "w": 60,
+                "h": 10
+            }
+        },
+        "bigButton.png": {
+            "frame": {
+                "x": 774,
+                "y": 196,
+                "w": 95,
+                "h": 94
+            }
+        },
+        "chatBackground.png": {
+            "frame": {
+                "x": 871,
+                "y": 196,
+                "w": 74,
+                "h": 76
+            }
+        },
+        "framePlate.png": {
+            "frame": {
+                "x": 947,
+                "y": 196,
+                "w": 74,
+                "h": 76
+            }
+        },
+        "textScrollbarTrack.png": {
+            "frame": {
+                "x": 871,
+                "y": 274,
+                "w": 60,
+                "h": 10
+            }
+        },
+        "dialogButton.png": {
+            "frame": {
+                "x": 774,
+                "y": 292,
+                "w": 82,
+                "h": 47
+            }
+        },
+        "sliderBackground.png": {
+            "frame": {
+                "x": 858,
+                "y": 292,
+                "w": 120,
+                "h": 30
+            }
+        },
+        "chip2.png": {
+            "frame": {
+                "x": 980,
+                "y": 292,
+                "w": 40,
+                "h": 30
+            }
+        },
+        "chip3.png": {
+            "frame": {
+                "x": 774,
+                "y": 341,
+                "w": 40,
+                "h": 30
+            }
+        },
+        "chip4.png": {
+            "frame": {
+                "x": 816,
+                "y": 341,
+                "w": 40,
+                "h": 30
+            }
+        },
+        "checkboxTick.png": {
+            "frame": {
+                "x": 858,
+                "y": 341,
+                "w": 21,
+                "h": 16
+            }
+        },
+        "timerBackground.png": {
+            "frame": {
+                "x": 774,
+                "y": 373,
+                "w": 32,
+                "h": 32
+            }
+        },
+        "checkboxBackground.png": {
+            "frame": {
+                "x": 808,
+                "y": 373,
+                "w": 18,
+                "h": 18
+            }
+        },
+        "dividerLine.png": {
+            "frame": {
+                "x": 0,
+                "y": 414,
+                "w": 2,
+                "h": 170
+            }
+        }
+    },
+    "meta": {
+        "app": "Spriter",
+        "version": "0.1",
+        "image": "spritesheet.png",
+        "format": "RGBA8888",
+        "scale": 1,
+        "size": {
+            "w": 1024,
+            "h": 1024
+        }
+    }
+}

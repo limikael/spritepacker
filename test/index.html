@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<script src="pixi.js"></script>
+	</head>
+	<body>
+		<script>
+			var renderer = new PIXI.WebGLRenderer(640, 480);
+		    document.body.appendChild(renderer.view);
+		    var stage = new PIXI.Stage();
+
+		    var assetLoader=new PIXI.AssetLoader(["spritesheet.json"]);
+		    assetLoader.onComplete=function() {
+		    	console.log("complete...");
+
+		    	var s=PIXI.Sprite.fromImage("seatPlate.png");
+		    	stage.addChild(s);
+
+		    	var s=PIXI.Sprite.fromImage("chip3.png");
+		    	s.position.x=100;
+		    	stage.addChild(s);
+		    }
+
+		    assetLoader.load();
+
+		    requestAnimationFrame(animate);
+
+		    function animate() {
+		        renderer.render(stage);
+		        requestAnimationFrame(animate);
+		    }			
+		</script>
+	</body>
+</html>
